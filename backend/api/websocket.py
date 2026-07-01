@@ -11,9 +11,9 @@ socketio = SocketIO()
 def push_data():
 
 	df = backtest()
-	data = {
-		'isi' : df.columns.tolist()
+	harga = {
+		'isi' : df['return'].tail(10).tolist()
 	}
 
-	socketio.emit('market_data', data)
+	socketio.emit('market_data', harga)
 
