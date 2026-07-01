@@ -12,5 +12,8 @@ socket.on('market_data', (data) => {
 });
 
 const test = (data) => {
-	console.log(data)
+	console.log(data.isi.length)
+	data.isi.forEach((harga) => {
+		console.log(harga)
+	})
 }
