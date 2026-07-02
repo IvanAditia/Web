@@ -9,10 +9,9 @@ socketio = SocketIO()
 
 @socketio.on('get_data')
 def push_data():
-
-	df = backtest()
+		
 	harga = {
-		'isi' : df['return'].tail(10).tolist()
+		'isi' : 'test'
 	}
 
 	socketio.emit('market_data', harga)

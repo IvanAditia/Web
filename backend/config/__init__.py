@@ -1,1 +1,1 @@
-from .config import PATH
+from .path import PATH

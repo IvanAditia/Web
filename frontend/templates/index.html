@@ -8,8 +8,46 @@
 	<title>Flask Project UI</title>
 </head>
 <body>
-	<h1> {{ text }}</h1>
+	<header>
+		<h1> DASHBOARD TRADING</h1>
+	</header>
+	<main>
+		<h2>Parameter</h2>
+		<section id='param'>
+			<form action="/" method="POST">
+				<label>Lot</label>
+				<input type="text" name="lot" value="1" />
+				
+				<label>Risk Percent</label>		
+				<input type="text" name="risk" value="2" />
 
-	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+				<label>Contract Size</label>
+				<input type="text" name="contract"/>
+
+				<label>Initial Balance</label>
+				<input type="text" name="balance"/>
+
+				<label>Leverage</label>
+				<input type="text" name="leverage"/>
+
+				<label>Fee per Lot</label>
+				<input type="text" name="fee"/>
+					
+				<button>Kirim</button>
+			</form>
+
+		</section>
+
+		<h2>Status Stationary</h2>
+		<section id="data">
+			
+		</section>
+	</main>
+
+	<img src="http://127.0.0.1:5000/static/output/hasil_backtest.png" alt="grafik">
+
+	<script src="{{ 
+		url_for('static', filename='js/main.js') 
+	}}"></script>
 </body>
 </html>

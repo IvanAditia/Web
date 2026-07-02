@@ -5,15 +5,11 @@ socket.on('connect', () => {
 	console.log('Terhubung');
 });
 
-let marketData = null;
-
-socket.on('market_data', (data) => {
-	test(data);
+socket.on('market_data', (harga) => {
+	test(harga);
 });
 
-const test = (data) => {
-	console.log(data.isi.length)
-	data.isi.forEach((harga) => {
-		console.log(harga)
-	})
+const test = (harga) => {
+	console.log(harga.isi.length)
+	console.log(harga)
 }

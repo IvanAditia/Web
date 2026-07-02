@@ -3,8 +3,18 @@ import numpy as np
 from .feature.indicator import ema, standar_deviation
 from ..config import PATH
 from .feature.candle import kriteria_candle
+import matplotlib.pyplot as plt
+from .parameter import backtest_param
 
-def backtest():
-    df = pd.read_parquet(PATH['gold_h1'])
-    df['return'] = np.log(df['close'])
-    return df
+df = pd.read_parquet(PATH['src_data']/'XAUUSD_H1.parquet')
+df['return'] = np.log(df['close'])
+
+def backtest(param):
+	return(
+		param.lot,
+		param.risk_percent,
+		param.contract_size,
+		param.initial_balance,
+		param.leverage,
+		param.fee_perlot
+	)

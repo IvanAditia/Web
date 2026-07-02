@@ -1,6 +1,0 @@
-initial_balance = 100
-lot = 0.01
-contract_size = 100
-fee_perlot = 6
-leverage = 500
-lot = 0.01
