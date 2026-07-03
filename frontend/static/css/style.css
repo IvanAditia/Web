@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Lora";
+    src: url("../font/lora/Lora-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: "Jetbrain-mono";
+	src: url("../font/jetbrain_mono/JetBrainsMono-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Traffolight";
+	src: url("../font/traffolight/Traffolight.otf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+body {
+	width: 100%;
+	padding: 20px 30px;
+}
+
+header {
+	width: 100vw;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+main {
+	width: 100%;
+}
+
+.wrapperPopup {
+	display: none;
+	background-color: ;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	inset: 0;
+	backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 1000;
+}
+
+.wrapperPopup.show {
+	display: flex;
+}
+
+.input {
+	width: 300px;
+	height: 410px;
+	background-color: white;
+	inset: 0;
+	padding: 5px;
+	border: solid 1px grey;
+	padding: 10px;
+	border-radius: 30px;
+}
+
+.input form h3 {
+	text-align: center;
+	font-family: 'Traffolight';
+}
+
+.input form input {
+	width: 250px;
+	margin: 5px 0px 5px 0px;
+	padding-left: 10px;
+	border-radius: 10px;
+	height: 25px;
+}
+
+.input form p {
+	width: 250px;	
+	font-family: 'Jetbrain-mono';
+}
+
+.button{
+	width: 250px;
+	display: flex;
+	gap: 10px;
+	justify-content: right;
+} 
+
+.button button {
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.displayParam {
+
+}
+
+.displayParam table {
+	width : calc(100% - 40px);
+	border: solid 1px grey;
+	border-radius: 10px;
+	margin-bottom: 5px;
+}
+
+.displayParam table tr {
+	display: flex;
+	justify-content: space-around;
+	padding: 5px;
+}
+
+.displayParam table tr th,td {
+	width: calc(100% - 40px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.btnUbah {
+	width: 20px;
+	border-radius: 10px;
+	padding: 3px 5px 3px 5px;
+}

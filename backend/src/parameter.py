@@ -8,3 +8,14 @@ class backtest_param:
 	initial_balance : float
 	leverage : int
 	fee_perlot : int
+
+
+def data_parameter(param):
+	return(
+		param.lot,
+		param.risk_percent,
+		param.contract_size,
+		param.initial_balance,
+		param.leverage,
+		param.fee_perlot
+	)

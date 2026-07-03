@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 
 	<title>Flask Project UI</title>
 </head>
@@ -11,40 +12,69 @@
 	<header>
 		<h1> DASHBOARD TRADING</h1>
 	</header>
+
 	<main>
-		<h2>Parameter</h2>
-		<section id='param'>
-			<form action="/" method="POST">
-				<label>Lot</label>
-				<input type="text" name="lot" value="1" />
-				
-				<label>Risk Percent</label>		
-				<input type="text" name="risk" value="2" />
+		<h2>Parameter</h2><br>
 
-				<label>Contract Size</label>
-				<input type="text" name="contract"/>
-
-				<label>Initial Balance</label>
-				<input type="text" name="balance"/>
-
-				<label>Leverage</label>
-				<input type="text" name="leverage"/>
-
-				<label>Fee per Lot</label>
-				<input type="text" name="fee"/>
+		<section id='popup' class="wrapperPopup">
+			<div class='input'>
+				<form action="/" method="POST">
+					<h3>INPUT PARAMETER</h3>
+					<p>Lot</p>
+					<input type="text" name="lot" value="1"/>
 					
-				<button>Kirim</button>
-			</form>
-
+					<p>Risk Percent</p>		
+					<input type="text" name="risk" value="1" />
+	
+					<p>Contract Size</p>
+					<input type="text" name="contract" value="1" />
+	
+					<p>Initial Balance</p>
+					<input type="text" name="balance" value="1"/>
+	
+					<p>Leverage</p>
+					<input type="text" name="leverage" value="1" />
+	
+					<p>Fee per Lot</p>
+					<input type="text" name="fee" value="1" />
+					<br>
+					<div class="button">
+						<button type="text" onclick="closeInput()">Batal</button>
+						<button type="submit" onclick="closeInput()">Kirim</button>
+					</div>
+				</form>
+			</div>
 		</section>
+
+		<section class="displayParam">
+			<table >
+				<tr>
+					<th>Lot</th>
+					<th>Risk (%)</th>
+					<th>Contract Size</th>
+					<th>Initial Balance</th>
+					<th>Leverage</th>
+					<th>Fee per Lot</th>
+					
+				</tr>
+
+				<tr>
+					<td>{{ lot }}</td>
+					<td>{{ risk }}</td>
+					<td>{{ contract }}</td>
+					<td>{{ balance }}</td>
+					<td>{{ leverage }}</td>
+					<td>{{ fee }}</td>
+				</tr>
+			</table>
+			<button onclick="openInput()" class="btnUbah">Ubah</button>
+		</section><br>
 
 		<h2>Status Stationary</h2>
-		<section id="data">
-			
+		<section class="data">
+				
 		</section>
 	</main>
-
-	<img src="http://127.0.0.1:5000/static/output/hasil_backtest.png" alt="grafik">
 
 	<script src="{{ 
 		url_for('static', filename='js/main.js') 
